@@ -16,7 +16,8 @@ handleChange = (e) => {
   this.setState({ [e.target.name] : e.target.value })
 }
 
-submitReservation = () => {
+submitReservation = (e) => {
+  e.preventDefault();
   const { addReservation } = this.props;
  
   let newReservation = {
@@ -60,12 +61,12 @@ clearInputs = () => {
                    value={this.state.time} 
                    onChange={this.handleChange} />
             <input className='guests-input'
-                   type='number'
+                   type='text'
                    placeholder='Number of guests' 
                    name='guests'
                    value={this.state.guests} 
                    onChange={this.handleChange} />
-            <button className='reserve-btn' onClick={this.submitReservation} >Make Reservation</button>
+            <button className='reserve-btn' onClick={(e) => this.submitReservation(e)} >Make Reservation</button>
           </form>
       )
     }

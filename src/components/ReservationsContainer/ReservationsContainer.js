@@ -3,6 +3,7 @@ import './ReservationsContainer.css';
 import Reservation from '../Reservation/Reservation';
 
 const ReservationsContainer = ({reservations, deleteReservation}) => {
+    console.log(reservations);
   const allReservations = reservations.map((reserve) => {
       return <Reservation 
               key={Date.now()} 

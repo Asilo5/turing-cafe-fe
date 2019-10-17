@@ -16,14 +16,16 @@ class App extends Component {
   }
 
   addReservation = (newBooking) => {
-    this.setState({ reservations: [...this.state.reservations, newBooking]})
+    console.log('hi');
+    this.setState({ reservations: [...this.state.reservations, newBooking] })
+    // console.log(this.state.reservations.name)
   }
 
-  deleteReservation = (id) => {
-    let updatedBookings = this.state.reservations.filter((reservation) => reservation.id !== id);
+  // deleteReservation = (id) => {
+  //   let updatedBookings = this.state.reservations.filter((reservation) => reservation.id !== id);
 
-    this.setState({ reservations: updatedBookings })
-  }
+  //   this.setState({ reservations: updatedBookings })
+  // }
 
   render() {
     return (
