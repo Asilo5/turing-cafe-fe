@@ -3,7 +3,12 @@ import './App.css';
 import Form from '../components/Form/Form';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
 
+    }
+  }
   render() {
     return (
       <div className="App">
