@@ -17,11 +17,25 @@ handleChange = (e) => {
 }
 
 submitReservation = () => {
+  const { addReservation } = this.props;
+ 
+  let newReservation = {
+    id: Date.now(),
+    ...this.state
+  }
 
+  addReservation(newReservation);
+
+  this.clearInputs();
 }
 
-cleatrInputs = () => {
-
+clearInputs = () => {
+  this.setState({ 
+    name: '',
+    date: '',
+    time: '',
+    guests: '' 
+  })
 }
 
     render() {
