@@ -8,12 +8,13 @@ class Form extends Component {
         name: '',
         date: '',
         time: '',
-        guests: ''
+        number: 0
       }
     }
 
 handleChange = (e) => {
   this.setState({ [e.target.name] : e.target.value })
+  this.setState({ number : parseInt(e.target.value) })
 }
 
 submitReservation = (e) => {
@@ -35,7 +36,7 @@ clearInputs = () => {
     name: '',
     date: '',
     time: '',
-    guests: '' 
+    guests: 0 
   })
 }
 
@@ -61,7 +62,7 @@ clearInputs = () => {
                    value={this.state.time} 
                    onChange={this.handleChange} />
             <input className='guests-input'
-                   type='text'
+                   type='number'
                    placeholder='Number of guests' 
                    name='guests'
                    value={this.state.guests} 
