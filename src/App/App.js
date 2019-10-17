@@ -6,7 +6,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      name: '',
+      date: '',
+      time: '',
+      guests: ''
     }
   }
   render() {
