@@ -12,28 +12,46 @@ class Form extends Component {
       }
     }
 
+handleChange = (e) => {
+  this.setState({ [e.target.name] : e.target.value })
+}
 
+submitReservation = () => {
+
+}
+
+cleatrInputs = () => {
+
+}
 
     render() {
       return (
           <form>
             <input className='name-input'
+                   type='text'
                    placeholder='Name' 
                    name='name'
-                   value={this.state.name}  />
+                   value={this.state.name}  
+                   onChange={this.handleChange} />
             <input className='date-input'
+                   type='text'
                    placeholder='Date (mm/dd)' 
                    name='date'
-                   value={this.state.date} />
+                   value={this.state.date} 
+                   onChange={this.handleChange} />
             <input className='time-input'
+                   type='text'
                    placeholder='Time' 
                    name='time'
-                   value={this.state.time} />
+                   value={this.state.time} 
+                   onChange={this.handleChange} />
             <input className='guests-input'
+                   type='number'
                    placeholder='Number of guests' 
                    name='guests'
-                   value={this.state.guests} />
-            <button>Make Reservation</button>
+                   value={this.state.guests} 
+                   onChange={this.handleChange} />
+            <button className='reserve-btn' onClick={this.submitReservation} >Make Reservation</button>
           </form>
       )
     }
